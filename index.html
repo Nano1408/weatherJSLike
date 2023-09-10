@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favaIcon.png" type="image/x-icon">
+    <title>Weather Search</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Open Weather app</h1>
+    </header>
+    <main>
+        <section id="containerAll">
+            <div class="button--search">
+                <input type="text" id="city" placeholder="Search location...">
+                <button onclick="fetchWeather()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <section id="container">
+                <h2 class="titleCity"></h2>
+                <div id="temp"></div>
+                <div id="weatherInfo">
+                    <div class="info"></div>
+                    <div class="icon"></div>
+                </div>
+                <div class="description"></div>
+            </section>
+        </section>
+
+        <footer>
+            <p>Develop by <a href="#">Fernando Perez</a></p>
+        </footer>
+    </main>
+    <!-- <footer>
+        <p>Develop by <a href="#">Fernando Perez</a></p>
+    </footer> -->
+
+    <script src="./assets/js/app.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/5c240fad6e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
