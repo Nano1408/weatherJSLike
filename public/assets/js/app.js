@@ -19,10 +19,14 @@ function fetchWeather(){
             console.log(data.main)
             console.log(data.wind)
 
-            const { main: { temp: temp, temp_min, humidity }, weather: [{ icon, description }], wind: { speed: windSpeed } } = data;
-            const temperature = temp.toFixed(0);
-            const temperaturaMinima= temp_min.toFixed(0);
+            const {main, weather, wind} = data;
 
+            const teperature = main.temp.toFixed(0);
+            const temp_min = main.temp_min.toFixed(0);
+            const humidity = main.humidity;
+            const windSpeed = wind.speed;
+            const icon = weather[0].icon;
+            const description = weather[0].description;
 
             const textCity = document.createElement('h2');
             textCity.textContent = queriedCity;
@@ -32,12 +36,12 @@ function fetchWeather(){
             container.appendChild(textCity);
 
             document.getElementById('temp').innerHTML=`
-            <p class="temperature">${temperature}ºC</p>
+            <p class="temperature">${teperature}ºC</p>
             `;
 
             document.querySelector('.info').innerHTML=`
             <hr>
-            <p class="temp"><span class="descriptionSpan">Temp-Min</span> <span class="magnitud">${temperaturaMinima}ºC</span></p>
+            <p class="temp"><span class="descriptionSpan">Temp-Min</span> <span class="magnitud">${temp_min}ºC</span></p>
             <p class="temp"><span class="descriptionSpan">Viento</span> <span class="magnitud">${windSpeed}m/s</span></p>
             <p class="temp"><span class="descriptionSpan">Humedad</span> <span class="magnitud">${humidity}%</span></p>
             `;
